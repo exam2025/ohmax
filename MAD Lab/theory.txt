@@ -1,0 +1,474 @@
+Android Studio is a new and fully integrated development environment, which has been recently
+launched by Google for the Android operating system. It has been designed to provide new tools
+for app development and to provide an alternative to Eclipse, currently the most widely used
+IDE. When you begin a new project in Android studio, the project's structure will appear with
+almost all the files held within the SDK directory, this switch to a Gradle based management
+system offers an even greater flexibility to the build process.
+Android Studio allows you to see any visual changes you make to your app in real-time, and you
+can also see how it will look on a number of different Android devices, each with different
+configurations and resolutions, simultaneously. Another feature in Android Studio are the new
+tools for the packing and labelling of code. These let you keep on top of your project when
+dealing with large amounts of code. The programme also uses a drag & drop system to move the
+components throughout the user interface.
+The programme will also help you to localize your apps, giving you a visual way to keep
+programming while controlling the flow of the application.
+
+
+What else does Android Studio offer?
+- A robust and straight forward development environment.
+- An easy way to test performance on other types of device.
+- Wizards and templates for common elements found in all Android programming.
+- A full-featured editor with lots of extra tools to speed up the development of your applications.
+Android UI Controls: There are number of UI controls provided by Android that allow you to
+build the graphical user interface for your app.
+• TextView:: This control is used to display text to the user.
+• EditText:: EditText is a predefined subclass of TextView that includes rich editing
+capabilities.
+• AutoCompleteTextView:: The AutoCompleteTextView is a view that is similar to
+EditText, except that it shows a list of completion suggestions automatically while the
+user is typing.
+• Button:: A push-button that can be pressed, or clicked, by the user to perform an action.
+• ImageButton:: AbsoluteLayout enables you to specify the exact location of its children.
+• CheckBox:: An on/off switch that can be toggled by the user. You should use
+checkboxes when presenting users with a group of selectable options that are not
+mutually exclusive.
+• ToggleButton:: An on/off button with a light indicator.
+• RadioButton:: The RadioButton has two states: either checked or unchecked.
+• Spinner::A drop-down list that allows users to select one value from a set.
+
+
+Android Event Handling : Events are a useful way to collect data about a user's interaction
+with interactive components of your app, like button presses or screen touch etc. The Android
+framework maintains an event queue into which events are placed as they occur and then each
+event is removed from the queue on a first-in, first-out (FIFO) basis. You can capture these
+events in your program and take appropriate action as per requirements. There are following
+three concepts related to Android Event Management:
+Event Listeners: The View class is mainly involved in building up a Android GUI, same
+View class provides a number of Event Listeners. The Event Listener is the object that receives
+notification when an event happens.
+Event Listeners Registration: Event Registration is the process by which an Event Handler
+gets registered with an Event Listener so that the handler is called when the Event Listener fires
+the event.
+Event Handlers: When an event happens and we have registered and event listener for the
+event, the event listener calls the Event Handlers, which is the method that actually handles the
+event.
+
+
+Event Listeners & Event Handlers
+Event Handler Event Listener & Description
+
+onClick() - onClickListener() This is called when the user either clicks or touches or
+focuses upon any widget like button, text, image etc. You will use
+onClick() event handler to handle such event.
+
+onLongClick() - onLongClickListener() This is called when the user either clicks or
+touches or focuses upon any widget like button, text, image etc. for one or
+more seconds. You will use onLongClick() event handler to handle such
+event.
+
+onFocusChange() - onFocusChangeListener() This is called when the widget loses its focus
+i.e. user go away from the view item. You will use onFocusChange() event
+handler to handle such event.
+
+onKey() - This is called when the user is focused on the item and presses or releases
+a hardware key on the device. You will use onKey() event handler to
+handle such event.
+
+onTouch() - onTouchListener() This is called when the user presses the key, releases
+the key, or any movement gesture on the screen. You will use onTouch()
+event handler to handle such event.
+
+onMenuItemClick() - onMenuItemClickListener() This is called when the user selects a menu
+item. You will use onMenuItemClick() event handler to handle such event.
+
+
+
+
+
+
+
+
+
+
+What is Android?
+
+Android is a stack of software for mobile devices which includes an Operating System,
+middleware and some key applications. The application executes within its own process and its
+own instance of Dalvik Virtual Machine.
+
+
+What is the Android SDK?
+
+To develop a mobile application, Android developers require some tools and this requirement is
+satisfied by “Android SDK” which is a set of tools that are used for developing or writing apps.
+It has a Graphical User Interface that emulates the Android environment. This emulator acts like
+an actual mobile device on which the developers write their code and then debug/test the same
+code to check if anything is wrong.
+
+
+What are the different versions of Android OS that you remember?
+
+Given below are the various versions of Android.
+Version Name
+Android 8.0 Oreo
+Android 7.0 – 7.1.2 Nougat
+Android 6 – 6.0.1 Marshmallow
+Android 5 – 5.1.1 Lollipop
+Android 4.4 – 4.4.4 KitKat
+Android 4.1 – 4.3 Jelly Bean
+Android 4.0-4.0.4 Ice Cream Sandwich
+
+
+What is the difference between Mobile Application Testing and Mobile Testing?
+
+Mobile app testing is the testing of applications on a device which mainly focuses on functions
+and features of the application. And Mobile Testing is the testing of the actual mobile device and
+focuses on mobile features like Call, SMS, Contacts, Media Player, inbuilt browsers, etc.
+
+
+Name the languages supported for Android development.
+
+Java is the widely used language for Android development. It also supports Kotlin and when
+used with Android SDK, it improves the performance speed too.
+
+
+What are the advantages of the Android Operating System?
+
+It is open-source and platform-independent. It supports various technologies like Bluetooth, WiFi, etc
+
+
+Which components are necessary for a New Android project?
+
+Whenever a new Android project is created, the below components are required:
+manifest: It contains an XML file.
+build/: It contains build output.
+src/: It contains the code and resource files.
+res/: It contains bitmap images, UI Strings and XML Layout i.e. all non-code resources.
+assets/: It contains a file that should be compiled into a .apk file.
+Provide the important core components of Android.
+The core components of Android operating systems are:
+• Activity
+• Intents
+• Services
+• Content Provider
+• Fragment
+
+
+Explain briefly – what is meant by Activities?
+
+Activities are the part of the mobile app which the user can see and interact with. For Example, if
+you open an SMS app which has multiple activities like create new SMS, add a contact from the
+address book, write the content in the SMS body, send SMS to the selected contact, etc.Activity
+keeps a track of the following:
+• Keeps track of what a user is currently looking for in an app.
+• Keeps a track of previously used processes, so that the user can switch between ongoing
+process and previous process.
+• It helps to kill the processes so that the user can return to their previous state
+An activity is implemented as a subclass of Activity class as shown below:
+Public class MyActivity extends Activity
+{
+}
+
+
+Explain Activity Lifecycle briefly.
+
+When a user interacts with the app and moves here and there, out of the app, returns to the app,
+etc. During all this process “Activity” instances also move in the different stages in their
+lifecycle.
+There are seven different states like – onCreate(), onStart(), onRestart(),
+onResume(), onPause(), onStop(), and onDestroy(). These are termed as a ‘callback’. Android
+system invokes these callbacks to know that the state has been changed.
+
+
+What is an Intent?
+
+Android has an Intent class when the user has to navigate from one activity to another. Intent
+displays notifications from the device to the user and then the user can respond to the notification
+if required.
+Given below are the two types:
+• Implicit Intents
+• Explicit Intents
+
+
+Explain Implicit and Explicit Intents.
+
+Implicit Intent calls the system components while explicit Intents invoke the Activity class.
+
+
+What is the importance of setting up permission in app development?
+
+Once the permissions are set for the app development, then the data and code are restricted to
+the authorized users only. If the code is kept without any restriction or if it is accessible to
+anyone then there are chances of compromise of code which results in defect leakage.
+
+
+What is .apk extension in Android?
+
+It is a default file format that is used by the Android Operating System. Application Package Kit
+(APK) is used for the installation of mobile apps. The .apk contains resource file, certificate,
+manifest file, and other code. APK files are archive files in the zip format with .apk extension.
+
+
+What is the database used for the Android platform?
+
+SQLite is the database that is used for the Android platform. It is an open-source, serverless
+database.
+
+
+What is ANR in Android?
+
+ANR stands for Application Not Responding. It is a notification or pop-up displayed by the
+Android platform whenever the application is performing too many functions at a time and if it is
+suddenly not responding for a long time to the user action.
+
+
+Which are the dialog boxes supported by the Android platform?
+
+Android supports four types of dialog boxes:
+• AlertDialog: It has a maximum of 3 buttons and sometimes AlertDialog includes
+checkboxes and Radio buttons to select the element.
+• ProgressDialog: It displays the progress bar or wheels.
+• TimePickerDialog: Using this dialog box, a user selects the Time.
+• DatePickerDialog: Using this dialog box, a user selects the Date
+
+
+What is ADB?
+
+Answer: Android Debug Bridge (ADB) is a command-line tool that performs shell commands.
+ADB is used for direct communication between the emulator ports. It gives direct control of the
+communication between the emulator instances to the developer.
+
+
+What is ActivityCreator?
+
+ActivityCreator is a batch file and shell script which was used to create a new Android project.
+It is now replaced by the “Create New Project” in Android SDK.
+
+
+What is Orientation?
+
+Answer: Orientation is the key feature in Smartphones nowadays. It has the ability to rotate the
+screen between Horizontal or Vertical mode.
+Android supports two types of screen Orientations as mentioned below:
+• Portrait: When your device is vertically aligned.
+• Landscape: When your device is horizontally aligned.
+setOrientation() is a method using which you can set a screen alignments. HORIZONTAL and
+VERTICAL are two values that can be set in the setOrientation() method. Whenever there is a
+change in the display orientation i.e. from Horizontal to Vertical or vice versa then onCreate()
+method of the Activity gets fired.
+Basically, when the orientation of the Android mobile device gets changed then the current
+activity gets destroyed and then the same activity is recreated in the new display orientation.
+Android developers define the orientation in the AndroidManifest.xml file.
+
+
+What is AIDL?
+
+In the Android platform, there are remote methods that facilitate the use of methods from one
+program to another. To create and implement the remote methods the first step is to define the
+communication interface in AIDL.
+
+AIDL stands for Android Interface Definition Language. It facilitates communication between
+the client and the service. It also communicates the information through inter-process
+communication. For communication between processes, the data is broken down into chunks
+which are easily understandable by the Android platform.
+
+
+What are the data types supported by AIDL?
+
+Data Types supported by AIDL are as follows:
+• String
+• List
+• Map
+• charSequence
+• Java data types such as INT, Long, Char, Boolean, etc
+
+
+Explain the AndroidManifest.xml file and why do you need this?
+
+Every application must have an AndroidManifest.xml file in the root directory. It contains
+information about your app and provides the same to the Android system.
+The information includes the package name, Android components such as Activity, Services,
+Broadcast Receivers, Content Providers, etc. Every Android system must have this information
+before running any app code.
+AndroidManifest.xml file performs the following tasks:
+• It provides a name to the Java package and this name is a unique identifier for the
+application.
+• It describes the various components of the application which include Activity, Services,
+Content Providers, etc. Also, it defines the classes which implement these components.
+• It is responsible to protect the application and it declares the permission for accessing the
+protected part of the app.
+• It also declares the Android API which is going to be used by the application.
+• It contains the library file details which are used and linked to the application.
+
+
+What all devices have you worked on?
+
+There are many mobile devices available in the market with different operating systems.
+Specifically, I have worked on Android, Windows, Symbian, iPhone, etc
+
+
+Which tools are used for debugging on the Android platform?
+
+To understand the cause of the failure or cause of any issue, debugging is important. On the
+Android platform Android Monitor.bat utility is used while on the iOS platform, iPhone
+Configuration utility is used for debugging purposes.
+There are different tools for debugging which include – Android DDMS, Android Debug Bridge,
+iOS simulator, Debugging from Eclipse with ADT, Remote debugging on Android with Chrome,
+etc.
+
+
+Which scenario can test only on real devices but not on an emulator?
+
+Emulators are used for performing similar kinds of testing which is performed on the real
+devices. Basically, emulators are used as a replacement for real devices as sometimes real
+89
+devices are not available for testing, the use of real mobile devices for testing purposes is costlier
+at times.
+But there are few scenarios that cannot be tested using emulator, these can be tested only using
+real devices. These scenarios are interrupted scenarios i.e. message, phone call interruption while
+using the app, low battery, Bluetooth, memory card mount and unmount, etc.
+
+
+How do you troubleshoot the android application which is crashing frequently?
+
+Given below are the few steps that we need to follow while troubleshooting the crashing
+issue:
+• Free up memory space: There is only limited space available on mobile devices for
+mobile apps. To avoid crashing issues or memory-related issues, you need to first check
+the memory space.
+• Clear app data usage: You can clear the app data using the Application Manager under
+“Settings”. This will clear the cache memory and allow some free space to install another
+app or it will boost up your current app.
+• Memory Management: Some apps run perfectly on one type of mobile device but the
+same app may not work on another type of device as for such devices the processing
+power, memory management, and CPU speed is different. For any app to run properly on
+any type of mobile device, you should manage the memory on the device.
+• Compatibility issue: It is always not possible to test mobile apps on all mobile devices,
+browsers, operating systems, etc. So you need to test your mobile app on as many mobile
+devices as you can in order to avoid any compatibility issue.
+
+
+How do you find memory leaks in the mobile app on the Android platform?
+
+Android Studio is using Android Device Manager (ADM), this ADM is used to detect the
+memory leaks in the Android platform.
+When you open ADM in the Android Studio then on the left-hand side of the ADM, you will
+find your device or emulator in which a heap sign will be displayed. When you are running any
+mobile app then you will see the heap size, memory analysis and other statistics displayed on it.
+
+
+What is DDMS?
+
+Android Studio has debugging tools known as DDMS i.e. Dalvik Debug Monitor Server.
+It has wide debugging features which include:
+• Port forwarding services.
+• Screen capture on the device.
+• Thread and Heap information.
+• Incoming call and SMS spoofing.
+• Logcat
+• Radio state information.
+• Location data spoofing.
+DDMS is integrated with the Android studio. To launch the DDMS, you need to open the
+Android Device Monitor (ADM) first and then click on the DDMS menu button. Once DDMS is
+launched, then on the left-hand side the list of connected devices is displayed along with the
+processes which are running on each device.
+With the help of DDMS, you can debug both on real devices and emulators.
+
+
+What are the different data storage options available on the Android platform?
+
+Android platform provides a wide range of data storage options. These options must be used
+based on the need such as data is secure and used with permission only or can be accessed
+publicly.
+Below is the list of data storage options on the Android platform:
+• SharedPreference: It stores data in XML files. It is the simplest way to store private data
+in the key-value pair.
+• SQLite: It stores structured data in the private database.
+• Internal Storage: It stores data in the device file system and any other app cannot read
+this data.
+• External Storage: Data is stored in the file system but it is accessible to all apps in the
+device
+
+
+Explain Sensors in Android.
+
+Android-enabled devices have built-in Sensors that measure Orientation, Motion and other
+conditions.
+These sensors provide data with high accuracy, which will help to monitor the positioning and
+movement of the device. Some of the sensors are hardware-based and few are software-based.
+There are three categories of sensors as mentioned below:
+• Motion Sensors: These sensors measure the rotational & acceleration forces and it
+includes gravity sensors, rotational vector sensors, accelerometers, etc.
+• Environmental Sensors: It measures air temperature, pressure, humidity, etc.
+• Position Sensors: It measures the physical position of the device and includes orientation
+sensors and magnetometers.
+There are four types of Java Classes as shown below:
+• Sensor Manager
+• Sensor
+• SensorEvent
+• SensorEventListener
+
+
+What do ADT stands for?
+
+ADT stands for Android development tool,This is useful to develop the applications and test the
+applications.
+
+
+What are the tools are placed in An Android SDK?
+
+Android SDK collaborated with Android Emulator, DDMS(Dalvik Debug Monitoring
+Services), AAPT(Android Asset Packaging tool) and ADB(Android debug bridge)
+
+
+What is viewGroup in android?
+
+View group is a collection of views and other child views, it is an invisible part and the base
+class for layouts.
+
+
+What are the notifications available in android?
+
+Toast Notification − It will show a pop up message on the surface of the window
+Status Bar Notification − It will show notifications on status bar
+Intent intent = new Intent(this, MyTestActivity.class);
+startActivity(intent);
+Dialogue Notification − It is an activity related notification.
+
+
+What is container in android?
+
+The container holds objects,widgets,labels,fields,icons,buttons.etc.
+
+
+What is an Adapter in android?
+
+The Adapter is used to create child views to represent the parent view items.
+
+
+Where layouts are placed in android?
+
+In The Layout folder, layouts are placed as XML files
+
+
+What are the exceptions available in android?
+
+InflateException, Surface.OutOfResourceException, SurfaceHolder.BadSurfaceTypeException,
+and WindowManager.BadTokenException
+
+
+Why can't you run java byte code on Android?
+
+Android uses DVM (Dalvik Virtual Machine ) rather using JVM(Java Virtual Machine), if we
+want, we can get access to .jar file as a library.
+
+
+How to launch an activity in android?
+
+Using with intent, we can launch an activity.
+
+
+What is fragment in android?
+
+Fragment is a piece of activity, if you want to do turn your application 360 degrees, you can do
+this by fragment.

@@ -1,0 +1,147 @@
+Aim: Design a StopWatch application
+Procedure:
+Creating a New project:
+• Open Android Studio and then click on File -> New -> New project.
+• Then select the Empty Activity and click Next.
+• Then type the Application name as “stopwatch″, select the Minimum SDK and select
+language as Java then click Finish
+Designing layout for the Android Application:
+• Click on app -> res -> layout -> activity_main.xml and write the following code
+
+
+
+
+Code for Activity_main.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/tv1"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="150dp"
+        android:gravity="center"
+
+    android:textSize="30sp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b1"
+        android:text="START"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="150dp"
+        android:onClick="onClickStart"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b2"
+        android:text="STOP"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"
+        android:onClick="onClickStop"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b3"
+        android:text="RESET"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="150dp"
+
+    android:onClick="onClickReset"/>
+</RelativeLayout>
+
+
+
+
+
+Java Coding for the Android Application:
+Click on app -> java -> com.garima.stopwatch -> MainActivity.
+Code for MainActivity.java:
+
+
+
+
+package com.example.ex9;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    private int seconds=0;
+    boolean running,wasRunning;
+    TextView txtv;
+    Handler hl;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        if(savedInstanceState!=null)
+
+        {
+            seconds=savedInstanceState.getInt("seconds");
+            running=savedInstanceState.getBoolean("running");
+            wasRunning=savedInstanceState.getBoolean("wasRunning");
+        }
+        runTimer();
+    }
+    protected void onPause() {
+        super.onPause();
+        wasRunning=running;
+        running=false;
+    }
+    protected void onResume()
+    {
+        super.onResume();
+        if(wasRunning)
+            running=true;
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstancestate)
+    {
+        savedInstancestate.putInt("seconds",seconds);
+
+        savedInstancestate.putBoolean("running",running);
+        savedInstancestate.putBoolean("wasRunning",wasRunning);
+    }
+    public void onClickStart(View v)
+    {
+        running=true;
+    }
+    public void onClickStop(View v)
+    {
+        running=false;
+    }
+    public void onClickReset(View v)
+    {
+        running=false;
+        seconds=0;
+    }
+    private void runTimer() {
+        txtv=(TextView)findViewById(R.id.tv1);
+        hl=new Handler();
+        hl.post(new Runnable() {
+            @Override
+            public void run() {
+                int hours=seconds/3600;
+                int minutes=(seconds%3600)/60;
+                int secs=seconds%60;
+
+                String time=String.format("%d:%02d:%02d",hours,minutes,secs);
+                txtv.setText(time);
+                if(running)
+                {
+                    seconds++;
+                }
+                hl.postDelayed(this,100) ;
+            }
+        });
+    }
+}

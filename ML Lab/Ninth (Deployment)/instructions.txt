@@ -1,0 +1,7 @@
+conda activate M_Lab
+
+pip install streamlit
+
+\ Go to the folder where the file is present to deploy 
+
+streamlit run "filename"

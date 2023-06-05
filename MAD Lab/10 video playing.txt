@@ -1,0 +1,73 @@
+Aim: Create an application to play video in android.
+Procedure:
+Creating a New project:
+• Open Android Studio and then click on File -> New -> New project.
+• Then select the Empty Activity and click Next.
+• Then type the Application name as “videoact″, select the Minimum SDK and select
+language as Java then click Finish
+Designing layout for the Android Application:
+• Click on app -> res -> layout -> activity_main.xml and write the following code
+
+
+
+Code for Activity_main.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.garima.videoact.MainActivity">
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<Button
+android:text="Play"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/btnPlay"
+android:onClick="playVideo" />
+<VideoView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/videoView" />
+</LinearLayout>
+</RelativeLayout>
+
+
+
+
+So now the designing part is completed.
+Java Coding for the Android Application:
+Click on app -> java -> com.garima.videoact -> MainActivity.
+
+
+
+
+Code for MainActivity.java:
+package com.garima.videoact;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
+import androidx.appcompat.app.AppCompatActivity;
+public class MainActivity extends AppCompatActivity {
+//create class reference
+VideoView vid;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+vid = (VideoView)findViewById(R.id.videoView);
+}
+public void playVideo(View v) {
+MediaController m = new MediaController(this);
+vid.setMediaController(m);
+String path = "android.resource://com.garima.videoact/"+R.raw.gulabo;
+Uri u = Uri.parse(path);
+vid.setVideoURI(u);
+vid.start();
+}
+}

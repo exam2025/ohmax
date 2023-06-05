@@ -1,0 +1,124 @@
+Aim: Develop a native application that uses GPS location information
+Creating a New project:
+• Open Android Studio and then click on File -> New -> New project.
+• Then select the Map Activity and click Next.
+• Then type the Application name as “MapsActivity″, select the Minimum SDK and select
+language as Java then click Finish
+Designing layout for the Android Application:
+• Click on app -> res -> layout -> activity_maps.xml and write the following code
+
+
+
+
+Activity_maps.xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity" >
+<TextView
+android:id="@+id/textview1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+android:layout_centerVertical="true"
+android:text="hello" />
+</RelativeLayout>
+
+
+
+
+So now the designing part is completed.
+Adding permissions in Manifest for the Android Application:
+• Click on app -> manifests -> AndroidManifest.xml
+• Now include the ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,
+INTERNET permissions in the AndroidManifest.xml file as shown below
+
+
+
+
+Code for AndroidManifest.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.garima.mapactivity"
+android:versionCode="1"
+android:versionName="1.0" >
+<uses-sdk
+android:minSdkVersion="8"
+android:targetSdkVersion="17" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<application
+android:allowBackup="true"
+android:icon="@mipmap/ic_launcher"
+android:label="@string/app_name"
+android:theme="@style/AppTheme" >
+<activity
+android:name="com.garima.mapactivity.MainActivity"
+android:label="@string/app_name" >
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+</activity>
+</application>
+</manifest>
+
+
+
+
+So now the Permissions are added in the Manifest.
+Java Coding for the Android Application:
+• Click on app -> java -> com.garima.mapactivity -> MainActivity.
+
+
+
+
+
+Code for MainActivity.java:
+package com.garima.mapactivity;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.widget.TextView;
+import android.util.Log;
+public class MainActivity extends Activity implements LocationListener{
+protected LocationManager locationManager;
+protected LocationListener locationListener;
+protected Context context;
+TextView txtLat;
+String lat;
+String provider;
+protected String latitude,longitude;
+protected boolean gps_enabled,network_enabled;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_maps);
+txtLat = (TextView) findViewById(R.id.textview1);
+locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+}
+@Override
+public void onLocationChanged(Location location) {
+txtLat = (TextView) findViewById(R.id.textview1);
+txtLat.setText("Latitude:" + location.getLatitude() + ", Longitude:" +
+location.getLongitude());
+}
+@Override
+public void onProviderDisabled(String provider) {
+Log.d("Latitude","disable");
+}
+@Override
+public void onProviderEnabled(String provider) {
+Log.d("Latitude","enable");
+}
+@Override
+public void onStatusChanged(String provider, int status, Bundle extras) {
+Log.d("Latitude","status");
+}
+}
